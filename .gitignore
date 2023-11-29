@@ -1,0 +1,12 @@
+# Archivos de configuración local
+.env
+
+# Carpetas generadas localmente
+node_modules/
+
+# Archivos de registro y otros archivos generados
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
