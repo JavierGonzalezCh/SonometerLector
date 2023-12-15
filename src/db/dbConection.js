@@ -9,7 +9,10 @@ const uri = `mongodb+srv://${user}:${password}@${cluster}.mongodb.net/${database
 
 async function connectDB() {
   try {
-    await mongoose.connect(uri);
+    await mongoose.connect(uri,{
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
     console.log('Conexión a la base de datos establecida con éxito');
   } catch (error) {
     console.error('Error al conectar a la base de datos:', error);
