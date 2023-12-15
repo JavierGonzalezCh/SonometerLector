@@ -1,14 +1,12 @@
 const SerialPort = require('serialport');
 
-function searchPorts(){
-    SerialPort.list().then(ports => {
-      console.log('Puertos disponibles:');
-      ports.forEach(port => {
-        console.log(`${port.path} - ${port.manufacturer || 'Desconocido'}`);
-      });
-    }).catch(err => {
-      console.error('Error al listar puertos serie:', err);
-    });
-}
+// Reemplaza 'COMx' con el nombre del puerto que estás utilizando
+const port = new SerialPort('COM6', { baudRate: 9600 });
 
-module.exports = searchPorts;
+// Verificar si el puerto está abierto
+if (port.isOpen) {
+  console.log('El puerto está abierto.');
+} else {
+  console.log('El puerto está cerrado.');
+}
+//module.exports = searchPorts;
